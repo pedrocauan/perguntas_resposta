@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Quando existe a pasta public criada com o express.static não é necessario colocar o diretorio dela-->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body class="bg-color ">
+    <header class="bg-dark">
+        <nav class="navbar container space">
+            <a class="nav-item" href="/">
+                <span>Home</span>
+            </a>
+        </nav>
+    </header>
+    <section class="container main-content">
+        <div class="form-color card">
+            <!--Titulo-->
+            <div class="card-header">
+                <h1 class="title">Perguntas</h1>
+            </div>
+            <article>
+                <div class="card-body">
+                    <!--Formulario com as perguntas-->
+                    <h2>Realizar Pergunta</h2>
+                        <form action="">
+                            <br><label for="title">Titulo</label>
+                            <input class="form-control" type="text" placeholder="titulo" name="title" id="title">
+                            <br><label for="desc">Descrição</label>
+                            <textarea id="desc" name="desc" class="form-control" rows="5" placeholder="Descreva sua pergunta aqui..."></textarea>
+                            <br>
+                            <button class="btn btn-warning">Perguntar</button>
+                        </form>
+                </div>
+            </article>
+            <!--Realizar perguntas-->
+        </div>
+        <!--Card-head-->
+    </section>
+    <!--Perguntas-->
+
+
+    <!--Script js-->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script defer src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

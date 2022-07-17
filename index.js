@@ -8,8 +8,13 @@ const app = express()
     //Permite aplicação de arquivos css, javascript e imagem na pasta criada (public)
     app.use(express.static("public"))
 
+
 app.get("/", function(req,res) {
     res.render("index.ejs")
+})
+
+app.get("/perguntar", function(req, res){
+    res.render("perguntar.ejs")
 })
 
 

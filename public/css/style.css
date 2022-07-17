@@ -1,0 +1,31 @@
+.title {
+    text-align: center;
+}
+
+
+.bg-color {
+    background-color: hsl(0, 0%, 12%);
+}
+
+.navbar-color {
+    background-color: hsl(0, 0%, 6%);
+}
+
+.nav-item {
+    color:hsl(0, 0%, 90%);
+}
+
+ a:hover{
+    color: hsl(0, 0%, 80%);
+    font-weight: 700;
+}
+
+.form-color {
+    background-color: hsl(0, 0%, 90%);
+    text-decoration: none !important;
+
+}
+
+.space {
+    margin-bottom: 5vh;
+}
