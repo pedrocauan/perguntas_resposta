@@ -1,3 +1,5 @@
+
+/*RESET DE MARGIN*/
 * {
     margin: 0;
     padding: 0;
@@ -7,32 +9,38 @@ h1{
     margin: 0;
 }
 
+/* Titulo da sessão*/
 .title {
     text-align: center;
 }
 
-
+/*Cor do fundo do body*/
 .bg-color {
     background-color: hsl(0, 0%, 12%);
 }
 
+/*Cor da barra de navegação*/
 .navbar-color {
     background-color: hsl(0, 0%, 6%);
 }
 
+/* Tira decoração da logo*/
 .nav-item, .nav-item:hover {
     color:hsl(0, 0%, 90%);
     text-decoration: none !important;
 }
 
+/* cor do formulario*/
 .form-color {
     background-color: hsl(0, 0%, 90%);
 }
 
+/* espaço entre a barra de navegação e o formulario*/
 .space {
     margin-bottom: 5vh;
 }
 
+/*h1 com o nome do site*/
 .logo {
     font-size: 30px;
 }
@@ -42,6 +50,7 @@ h1{
     color: gold;
 }
 
+/*Centraliza elementos*/
 .centralize {
     display: flex;
     justify-content: center;
