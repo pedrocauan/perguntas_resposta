@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+}
+
 .title {
     text-align: center;
 }
@@ -11,21 +20,31 @@
     background-color: hsl(0, 0%, 6%);
 }
 
-.nav-item {
+.nav-item, .nav-item:hover {
     color:hsl(0, 0%, 90%);
-}
-
- a:hover{
-    color: hsl(0, 0%, 80%);
-    font-weight: 700;
+    text-decoration: none !important;
 }
 
 .form-color {
     background-color: hsl(0, 0%, 90%);
-    text-decoration: none !important;
-
 }
 
 .space {
     margin-bottom: 5vh;
 }
+
+.logo {
+    font-size: 30px;
+}
+
+
+.logo span {
+    color: gold;
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
