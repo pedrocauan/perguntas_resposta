@@ -28,12 +28,15 @@ let qntPergunta = 0; //Quantidade de perguntas enviadas pelo usuario
 
 //Rotas
 app.get("/", function(req,res) {
-    /*SELECT * FROM tblPergunta */
+    // Perguntas.findAll = SELECT * FROM tblPergunta
+    // perguntas -> variavel que vai guardar um arquivo json com os dados do banco
+    // res.render('index',{perguntas: perguntas}) -> envia o json pro front end (index.ejs)
+
     // {raw: true} -> faz ele pegar só os dados da tabela
     Perguntas.findAll({ raw: true }).then( perguntas => {
-        //passa como segundo parametro o json que vai ser enviado pro front end
+        //Envia dados pro front em json
         res.render("index.ejs", {
-            perguntas: perguntas //objecto json acessado no front
+            perguntas: perguntas //objecto json enviado pro front
         })
         console.log(perguntas)
     })
