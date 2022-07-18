@@ -1,8 +1,19 @@
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser") //traduz os dados do form para uma estrutura javascript que pode ser usada no backend
+const connection = require("./database/db")
+const modelPergunta = require("./database/Pergunta")
 let qntPergunta = 0; //Quantidade de perguntas enviadas pelo usuario
 
+//database
+    connection
+    .authenticate()
+    .then(() =>{
+        console.log("Conectou a database")
+    })
+    .catch((err)=> {
+        console.log(err)
+    })
 
 //Config
     //View Engine
