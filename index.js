@@ -42,7 +42,16 @@ app.post("/salvarpergunta", function(req, res) {
     let desc = req.body.desc
     console.log(`Pergunta${qntPergunta}: ${titulo}`)
     console.log(`Descricao: ${desc}`)
-    res.send("Formulário enviado com sucesso !!")
+    //Envia informações do formulário para o banco de dados
+    modelPergunta.create({
+        titulo: titulo,
+        descricao: desc
+    }).then(() =>{
+        //Joga o usuario de volta pra pagina home caso ele consiga inserir os dados no banco
+        res.redirect("/")
+    }).catch((err) => {
+        console.log(err)
+    })
 })
 
 app.listen(8084, (err) => {

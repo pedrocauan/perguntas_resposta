@@ -14,6 +14,10 @@ h1{
     text-align: center;
 }
 
+.title-gold {
+    color: gold;
+}
+
 /*Cor do fundo do body*/
 .bg-color {
     background-color: hsl(0, 0%, 12%);
