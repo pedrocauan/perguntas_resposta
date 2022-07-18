@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser") //traduz os dados do form para uma estrutura javascript que pode ser usada no backend
 const connection = require("./database/db")
-const modelPergunta = require("./database/Pergunta")
+const Perguntas = require("./database/Pergunta")
 let qntPergunta = 0; //Quantidade de perguntas enviadas pelo usuario
 
 //database
@@ -28,7 +28,17 @@ let qntPergunta = 0; //Quantidade de perguntas enviadas pelo usuario
 
 //Rotas
 app.get("/", function(req,res) {
-    res.render("index.ejs")
+    /*SELECT * FROM tblPergunta */
+    // {raw: true} -> faz ele pegar só os dados da tabela
+    Perguntas.findAll({ raw: true }).then( perguntas => {
+        //passa como segundo parametro o json que vai ser enviado pro front end
+        res.render("index.ejs", {
+            perguntas: perguntas //objecto json acessado no front
+        })
+        console.log(perguntas)
+    })
+    
+    
 })
 
 app.get("/perguntar", function(req, res){
@@ -43,7 +53,9 @@ app.post("/salvarpergunta", function(req, res) {
     console.log(`Pergunta${qntPergunta}: ${titulo}`)
     console.log(`Descricao: ${desc}`)
     //Envia informações do formulário para o banco de dados
-    modelPergunta.create({
+
+    /* INSERT INTO tblPergunta(titulo,descricao)values('titulo', 'descricao') */
+    Perguntas.create({
         titulo: titulo,
         descricao: desc
     }).then(() =>{
