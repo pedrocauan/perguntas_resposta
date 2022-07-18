@@ -10,7 +10,11 @@
     <!--navbar-->
     <%- include('partials/nav.ejs'); %>
         <h1 class="title title-gold">Faça Sua Pergunta</h1>
-
+        <div class="contaier">
+            <% perguntas.forEach(pergunta =>{ %>
+                <p style="color: white"><%= pergunta.titulo %></p>
+            <% }) %>
+        </div>
     <!--footer-->
     <%- include('partials/footer.ejs'); %>
 </body>
