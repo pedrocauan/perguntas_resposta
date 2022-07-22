@@ -9,14 +9,34 @@
 <body class="bg-color">
     <!--navbar-->
     <%- include('partials/nav.ejs'); %>
+    <!--Tilo-->
+    <div class="container">
+        <hr>
         <h1 class="title title-gold">Faça Sua Pergunta</h1>
-        <div class="contaier">
-            <% perguntas.forEach(pergunta =>{ %>
-                <p style="color: white"><%= pergunta.titulo %></p>
-            <% }) %>
+            <a href="/perguntar" class="btn btn-warning"> Perguntar</a>
+        <hr>
         </div>
-    <!--footer-->
-    <%- include('partials/footer.ejs'); %>
+        <div class="container">
+
+            <% perguntas.forEach(pergunta=>{ %>
+                <!--Cria um card-->
+                </br>
+                <div class="card">
+                    <!--Titulo da pergunta-->
+                    <div class="card-body">
+                        <h3>
+                            <%= pergunta.titulo %>
+                        </h3>
+                    </div>
+                    <!--Botao-->
+                    <div class="card-footer">
+                        <button class="btn btn-warning">Responder</button>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <!--footer-->
+        <%- include('partials/footer.ejs'); %>
 </body>
 
 </html>
