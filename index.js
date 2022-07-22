@@ -32,11 +32,11 @@ app.get("/", function(req,res) {
     // perguntas -> variavel que vai guardar um arquivo json com os dados do banco
     // res.render('index',{perguntas: perguntas}) -> envia o json pro front end (index.ejs)
 
-    // {raw: true} -> faz ele pegar só os dados da tabela
-    Perguntas.findAll({ raw: true }).then( perguntas => {
+    // {raw: true} -> faz ele pegar só os dados da tabela, {raw:true, order: [ ["id", "DESC/ASC"] ]} -> ordena em ordem decrescente ou crescente
+    Perguntas.findAll({ raw: true, order: [ ["id", "DESC"] ] }).then( perguntas => {
         //Envia dados pro front em json
         res.render("index.ejs", {
-            perguntas: perguntas //objecto json enviado pro front
+            perguntas: perguntas, //objecto json enviado pro front
         })
         console.log(perguntas)
     })
