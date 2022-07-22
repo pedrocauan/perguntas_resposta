@@ -33,7 +33,7 @@ app.get("/", function(req,res) {
     // res.render('index',{perguntas: perguntas}) -> envia o json pro front end (index.ejs)
 
     // {raw: true} -> faz ele pegar só os dados da tabela, {raw:true, order: [ ["id", "DESC/ASC"] ]} -> ordena em ordem decrescente ou crescente
-    Perguntas.findAll({ raw: true, order: [ ["id", "DESC"] ] }).then( perguntas => {
+    Perguntas.findAll({ raw: true, order: [ ["ID", "DESC"] ] }).then( perguntas => {
         //Envia dados pro front em json
         res.render("index.ejs", {
             perguntas: perguntas, //objecto json enviado pro front
@@ -66,6 +66,21 @@ app.post("/salvarpergunta", function(req, res) {
         res.redirect("/")
     }).catch((err) => {
         console.log(err)
+    })
+})
+
+app.get("/pergunta/:id", function(req,res){
+    //Pega o id que o usuario  solicitou
+    let id = req.params.id
+    //Procura a pergunta no banco de dados
+    Perguntas.findOne({
+        where: {id: id}
+    }).then(pergunta => {
+        //Se não exsitir pergunta, ele redireciona pra pagina principal
+        if(!pergunta)
+            res.redirect("/")
+        res.render("pergunta.ejs")
+  
     })
 })
 
